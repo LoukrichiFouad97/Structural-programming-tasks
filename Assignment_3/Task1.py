@@ -1,14 +1,32 @@
-for i in range(1, 10):
-    print('*' * i)
+def print_pattern(rows, columns):
+    for i in range(rows):
+        for j in range(columns):
+            if j <= i:
+                print('*', end='')
+            else:
+                print(' ', end='')
 
-# Pattern (Flipped vertically)
-for i in range(9, 0, -1):
-    print('*' * i)
+        for j in range(columns):
+            if j <= (rows - 1 - i):
+                print('*', end='')
+            else:
+                print(' ', end='')
 
-# Pattern (Rotated 180 degrees)
-for i in range(9, 0, -1):
-    print(' ' * (9 - i) + '*' * i)
+        for j in range(columns):
+            if j >= i:
+                print('*', end='')
+            else:
+                print(' ', end='')
 
-# Pattern (Rotated horizontally)
-for i in range(1, 10):
-    print(' ' * (9 - i) + '*' * i)
+        for j in range(columns):
+            if j >= (rows - 1 - i):
+                print('*', end='')
+            else:
+                print(' ', end='')
+
+        print()
+
+rows = 10
+columns = 10
+
+print_pattern(rows, columns)
